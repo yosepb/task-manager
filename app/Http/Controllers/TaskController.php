@@ -18,4 +18,11 @@ class TaskController extends Controller
     {
         return new TaskResource($task);
     }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate(['title' => 'required|max:255']);
+        $task = Task::create($validated);
+        return new TaskResource($task);
+    }
 }
