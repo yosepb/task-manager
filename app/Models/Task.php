@@ -14,10 +14,13 @@ class Task extends Model
 
     protected $fillable = [
         'title',
-        'is_done'
+        'is_done',
+        'project_id',
     ];
 
     protected $casts = [
+        'creator_id' => 'integer',
+        'project_id' => 'integer',
         'is_done' => 'boolean'
     ];
 
