@@ -54,7 +54,7 @@ class User extends Authenticatable
         return $this->hasMany(Project::class, 'creator_id');
     }
 
-    public function membership(): BelongsToMany
+    public function memberships(): BelongsToMany
     {
         return $this->belongsToMany(Project::class, Member::class);
     }
